@@ -10,13 +10,13 @@
         overflow-x: hidden;
     }
 
-    p, a, h2
+    p, a, h1, h2
     {
         font-size: 18px;
         font-family: Roboto;
     }
 
-    h1, h3
+    h3
     {
         font-family: Shrikhand;
     }
@@ -48,11 +48,12 @@
     {
         0%
         {
-            transform: scale(1);
+            opacity: 0.8;
         }
         100%
         {
-            transform: scale(0);
+            opacity: 0;
+            visibility: hidden;
         }
     }
 
@@ -88,13 +89,15 @@
         align-items: center;
         width: 100%;
         height: 100px;
-        box-shadow: 10px 10px 10px black;
+        box-shadow: 0px 3px 10px rgb(124, 124, 124);
+        z-index: 1;
+        position: relative;
     }
 
     .logo img
     {
-        width: 280px;
-        height: 50px;
+        width: 230px;
+        height: 40px;
     }
 
     .input
@@ -157,7 +160,7 @@
 
     .btn
     {
-        width: 40%;
+        width: 300px;
         color: white;
         border: 1px #f2f2f2 solid;
         border-radius: 30px;
@@ -189,6 +192,11 @@
     {
         top: 0;
         border-radius: 0;
+    }
+
+    .btn:hover
+    {
+        box-shadow: 5px 3px 10px rgb(124, 124, 124);
     }
 
     .menu
@@ -287,9 +295,24 @@
         height: 100%;
     }
 
-    .heart i:active
+    .heart .fa-solid
     {
-        background: linear-gradient(70deg, #FF79DA, #9356DC);
+        position: relative;
+        background: linear-gradient(70deg, #ffa8e6, #ad80e5);
+        background-clip: text;
+        color: transparent;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .heart .fa-regular
+    {
+        position: absolute;
+    }
+
+    .heart .fa-solid:hover
+    {
+        opacity: 1;
     }
 
     footer
