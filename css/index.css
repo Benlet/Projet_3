@@ -225,24 +225,51 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 50px;
+        width: 15%;
         height: 100%;
         color: #848485;
+        font-size: 25px;
+    }
+
+    .fonction i:hover
+    {
+        color: #9356DC;
     }
 
     .fonction p
     {
         display: flex;
-        justify-content: center;
         align-items: center;
         height: 100%;
-        width: 60%;
+        width: 75%;
         margin: 0%;
     }
 
     .fonction:hover
     {
-        background-color: #e1cfe2;
+        background-color: #e4d5f6;
+    }
+
+    .number
+    {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        width: 10%;
+        position: relative;
+        transform: translate(-35%);
+    }
+
+    .number p
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        width: 25px;
+        height: 25px;
+        border-radius: 100%;
+        background-color: #9356DC;
     }
 
     .carte
@@ -270,6 +297,12 @@
     .texte
     {
         margin-left: 20px;
+    }
+
+    .texte a
+    {
+        text-decoration: none;
+        color: black;
     }
 
     .texte h3, .texte p
