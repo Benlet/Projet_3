@@ -40,7 +40,6 @@ body, html
         animation: ghost 1s;
         animation-fill-mode: forwards;
         animation-delay: 3s;
-        transform-origin: top;
     }
 
     @keyframes ghost

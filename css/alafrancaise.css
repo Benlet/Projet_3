@@ -11,7 +11,7 @@ body, html
 
     p, a, strong
     {
-        font-size: 18px;
+        font-size: 16px;
         font-family: Roboto;
     }
 
@@ -27,6 +27,9 @@ body, html
         z-index: 1;
         position: relative;
         border-radius: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     header a
@@ -111,6 +114,7 @@ body, html
 
     article
     {
+        width: 30%;
         margin-bottom: 70px;
     }
 
@@ -119,7 +123,7 @@ body, html
         display: flex;
         justify-content: space-between;
         width: 90%;
-        height: 70px;
+        height: 90px;
         background-color: white;
         border: 1px white solid;
         border-radius: 20px;
@@ -127,6 +131,33 @@ body, html
         margin-right: auto;
         margin-bottom: 20px;
         box-shadow: 10px 10px 10px #f2f2f2;
+    }
+
+    .tartare, .coquilles, .petale
+    {
+        animation: ninja 1s;
+    }
+
+    .veloute, .magret, .fondant
+    {
+        animation: ninja 2s;
+    }
+
+    .soupe, .pigeonneau, .millefeuille
+    {
+        animation: ninja 3s;
+    }
+
+    @keyframes ninja
+    {
+        0%
+        {
+            opacity: 0;
+        }
+        100%
+        {
+            opacity: 1;
+        }
     }
 
     .carte p
@@ -230,19 +261,26 @@ body, html
     {
         background-color: #282f32;
         width: 100%;
+        height: 200px;
     }
 
     footer h3
     {
         color: white;
-        padding: 20px 0px 20px 40px;
+        padding: 20px 0px 20px 0px;
         margin: 0%;
+        text-align: center;
     }
 
     ul
     {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
         list-style-type: none;
         margin: 0%;
+        padding: 0%;
+        height: 75px;
     }
 
     ul li
@@ -260,6 +298,16 @@ body, html
         text-decoration: none;
         color: white;
     }
+
+@media all and (max-width: 1050px) and (min-width: 768px)
+{
+    article
+    {
+        margin-bottom: 70px;
+        flex-direction: row;
+        width: 100%;
+    }
+}
 
 @media screen and (max-width: 768px)
 {
@@ -373,6 +421,8 @@ body, html
     article
     {
         margin-bottom: 70px;
+        flex-direction: row;
+        width: 100%;
     }
 
     .carte
@@ -491,6 +541,7 @@ body, html
     {
         background-color: #282f32;
         width: 100%;
+        height: 200px;
     }
 
     footer h3
@@ -498,12 +549,16 @@ body, html
         color: white;
         padding: 20px 0px 20px 40px;
         margin: 0%;
+        text-align: start;
     }
 
     ul
     {
+        justify-content: flex-start;
+        align-items: flex-start;
         list-style-type: none;
-        margin: 0%;
+        margin-left: 40px;
+        flex-direction: column;
     }
 
     ul li
