@@ -35,7 +35,7 @@ h2 {
   animation-fill-mode: forwards;
   animation-delay: 3s;
 }
-.loader ::after {
+.loader::after {
   content: "";
   border-top: 5px #9356DC solid;
   border-bottom: 5px #FF79DA solid;
@@ -113,6 +113,7 @@ h2 {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 0px;
+  text-align: center;
 }
 
 .explorep {
@@ -128,7 +129,6 @@ h2 {
 .btn {
   width: 300px;
   color: white;
-  border: 1px #f2f2f2 solid;
   border-radius: 30px;
   padding: 20px 0 20px 0;
   background: linear-gradient(70deg, #FF79DA, #9356DC);
@@ -139,10 +139,11 @@ h2 {
   overflow: hidden;
   z-index: 0;
 }
-.btn :hover {
+.btn:hover {
   box-shadow: 5px 3px 10px rgb(124, 124, 124);
+  transition: box-shadow 0.5s ease-in-out;
 }
-.btn ::before {
+.btn::before {
   content: "";
   position: absolute;
   top: 64px;
@@ -154,25 +155,24 @@ h2 {
   border-radius: 30% 30% 0 0;
   z-index: -1;
 }
-.btn ::before :hover {
+
+.btn:hover::before {
   top: 0;
   border-radius: 0;
 }
 
 .menu {
+  height: 200px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 100px;
-  width: 100%;
 }
 
 .fonction {
   display: flex;
-  border: 1px #f2f2f2 solid;
   border-radius: 30px;
   box-shadow: 0px 7px 10px #c0c0c0;
-  width: 25%;
+  width: 27%;
   height: 70px;
   background-color: #f2f2f2;
 }
@@ -185,7 +185,7 @@ h2 {
   color: #848485;
   font-size: 25px;
 }
-.fonction i :hover {
+.fonction i:hover {
   color: #9356DC;
 }
 .fonction p {
@@ -195,7 +195,7 @@ h2 {
   width: 75%;
   margin: 0%;
 }
-.fonction :hover {
+.fonction:hover {
   background-color: #e4d5f6;
 }
 
@@ -279,8 +279,9 @@ h2 {
   opacity: 0;
   cursor: pointer;
 }
-.heart .fa-solid :hover {
+.heart .fa-solid:hover {
   opacity: 1;
+  transition: opacity 0.5s ease-in-out;
 }
 .heart .fa-regular {
   position: absolute;
@@ -376,7 +377,7 @@ ul li a {
     animation-delay: 3s;
     transform-origin: top;
   }
-  .loader ::after {
+  .loader::after {
     content: "";
     border-top: 5px #9356DC solid;
     border-bottom: 5px #FF79DA solid;
@@ -457,7 +458,6 @@ ul li a {
   .btn {
     width: 300px;
     color: white;
-    border: 1px #f2f2f2 solid;
     border-radius: 30px;
     padding: 20px 0 20px 0;
     background: linear-gradient(70deg, #FF79DA, #9356DC);
@@ -468,7 +468,7 @@ ul li a {
     overflow: hidden;
     z-index: 0;
   }
-  .btn ::before {
+  .btn::before {
     content: "";
     position: absolute;
     top: 64px;
@@ -480,18 +480,25 @@ ul li a {
     border-radius: 30% 30% 0 0;
     z-index: -1;
   }
-  .btn :hover {
+  .btn:hover {
     box-shadow: 5px 3px 10px rgb(124, 124, 124);
   }
-  .btn :hover ::before {
+  .btn:hover::before {
     top: 0;
     border-radius: 0;
+  }
+  .menu {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    height: 250px;
+    width: 100%;
   }
   .fonction {
     display: flex;
     justify-content: center;
     text-align: center;
-    border: 1px #f2f2f2 solid;
     border-radius: 30px;
     box-shadow: 0px 7px 10px #c0c0c0;
     width: 80%;
@@ -518,7 +525,7 @@ ul li a {
     width: 75%;
     margin: 0%;
   }
-  .fonction :hover {
+  .fonction:hover {
     background-color: #e4d5f6;
   }
   .number {

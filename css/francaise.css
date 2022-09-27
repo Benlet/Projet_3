@@ -54,7 +54,7 @@ header a {
   padding-top: 25px;
 }
 
-image img {
+.image img {
   width: 100%;
   height: 400px;
   object-fit: cover;
@@ -76,6 +76,30 @@ image img {
   margin-right: 20px;
 }
 
+.heart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  width: 100px;
+  height: 100%;
+}
+.heart .fa-solid {
+  position: relative;
+  background: linear-gradient(70deg, #FF79DA, #9356DC);
+  background-clip: text;
+  color: transparent;
+  opacity: 0;
+  cursor: pointer;
+}
+.heart .fa-solid:hover {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+.heart .fa-regular {
+  position: absolute;
+}
+
 h1 {
   margin-left: 20px;
   display: flex;
@@ -88,7 +112,7 @@ strong {
   margin-left: 28px;
   text-transform: uppercase;
 }
-strong ::after {
+strong::after {
   content: "";
   border: 3px #99E2D0 solid;
   width: 30px;
@@ -111,6 +135,14 @@ article {
   margin-right: auto;
   margin-bottom: 20px;
   box-shadow: 10px 10px 10px #f2f2f2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.carte:hover .break {
+  margin-right: 0px;
+  transition: margin-right 0.5s ease-in-out;
 }
 .carte p {
   margin: 5px;
@@ -141,11 +173,9 @@ article {
   flex-direction: column;
   justify-content: space-evenly;
   width: 70%;
-}
-.texte p {
   text-overflow: ellipsis;
   overflow: hidden;
-  word-wrap: break-word;
+  white-space: nowrap;
 }
 
 .prix {
@@ -154,7 +184,8 @@ article {
 }
 
 .break {
-  width: -75px;
+  width: 75px;
+  margin-right: -75px;
   height: 100%;
   display: flex;
   align-items: center;
@@ -162,16 +193,22 @@ article {
   background-color: #99E2D0;
   border-bottom-right-radius: 20px;
   border-top-right-radius: 20px;
-  overflow: hidden;
-}
-.break :hover {
-  width: 100px;
 }
 .break i {
   font-size: 25px;
   color: white;
+  animation: spin infinite 1.5s;
+  animation-delay: 1s;
 }
 
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .boitebtn {
   width: 100%;
   height: 200px;
@@ -182,7 +219,6 @@ article {
   width: 40%;
   margin-left: auto;
   margin-right: auto;
-  border: 1px #f2f2f2 solid;
   border-radius: 30px;
   background: linear-gradient(70deg, #FF79DA, #9356DC);
   color: white;
@@ -191,7 +227,7 @@ article {
   overflow: hidden;
   z-index: 0;
 }
-.btn ::before {
+.btn::before {
   content: "";
   position: absolute;
   top: 64px;
@@ -203,10 +239,11 @@ article {
   border-radius: 30% 30% 0 0;
   z-index: -1;
 }
-.btn :hover {
+.btn:hover {
   box-shadow: 5px 3px 10px rgb(124, 124, 124);
+  transition: box-shadow 0.5s ease-in-out;
 }
-.btn :hover ::before {
+.btn:hover::before {
   top: 0;
   border-radius: 0;
 }
@@ -327,7 +364,7 @@ ul li a {
     margin-left: 28px;
     text-transform: uppercase;
   }
-  strong ::after {
+  strong::after {
     content: "";
     border: 3px #99E2D0 solid;
     width: 30px;
@@ -379,8 +416,8 @@ ul li a {
     border-top-right-radius: 20px;
     overflow: hidden;
   }
-  .break :hover {
-    width: 100px;
+  .break:hover {
+    width: 75px;
   }
   .break i {
     font-size: 25px;
@@ -395,7 +432,6 @@ ul li a {
     width: 40%;
     margin-left: auto;
     margin-right: auto;
-    border: 1px #f2f2f2 solid;
     border-radius: 30px;
     background: linear-gradient(70deg, #FF79DA, #9356DC);
     color: white;
@@ -404,7 +440,7 @@ ul li a {
     overflow: hidden;
     z-index: 0;
   }
-  .btn ::before {
+  .btn::before {
     content: "";
     position: absolute;
     top: 64px;
@@ -416,10 +452,10 @@ ul li a {
     border-radius: 30% 30% 0 0;
     z-index: -1;
   }
-  .btn :hover {
+  .btn:hover {
     box-shadow: 5px 3px 10px rgb(124, 124, 124);
   }
-  .btn :hover ::before {
+  .btn:hover::before {
     top: 0;
     border-radius: 0;
   }

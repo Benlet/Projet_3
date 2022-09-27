@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+@import "utilities.scss";
+
 body, html
     {
         width: 100%;
@@ -21,7 +23,7 @@ body, html
 
     section
     {
-        background-color: #f2f2f2;
+        background-color: $lightgrey;
         margin-top: -80px;
         z-index: 1;
         position: relative;
@@ -50,8 +52,8 @@ body, html
         text-align: center;
         width: 100%;
         height: 100px;
-        border-bottom: 2px #D9D9D9 solid;
-        box-shadow: 0px 5px 5px #D9D9D9;
+        border-bottom: 2px $grey solid;
+        box-shadow: 0px 5px 5px $grey;
         position: relative;
         z-index: 1;
 
@@ -63,7 +65,7 @@ body, html
         }
     }
 
-    image img
+    .image img
     {
         width: 100%;
         height: 400px;
@@ -89,6 +91,37 @@ body, html
         }
     }
 
+    .heart
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        width: 100px;
+        height: 100%;
+
+        .fa-solid
+        {
+            position: relative;
+            background: linear-gradient(70deg, $secondarycolor, $primarycolor);
+            background-clip: text;
+            color: transparent;
+            opacity: 0;
+            cursor: pointer;
+
+            &:hover
+            {
+                opacity: 1;
+                transition: opacity .5s ease-in-out;
+            }
+        }
+
+        .fa-regular
+        {
+            position: absolute;
+        }
+    }
+
     h1
     {
         margin-left: 20px;
@@ -103,10 +136,10 @@ body, html
         margin-left: 28px;
         text-transform: uppercase;
 
-        ::after
+        &::after
         {
             content: "";
-            border: 3px #99E2D0 solid;
+            border: 3px $mintgreen solid;
             width: 30px;
         }
     }
@@ -129,7 +162,17 @@ body, html
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 20px;
-        box-shadow: 10px 10px 10px #f2f2f2;
+        box-shadow: 10px 10px 10px $lightgrey;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+
+        &:hover .break
+        {
+            margin-right: 0px;
+            transition: margin-right .5s ease-in-out;
+        }
 
         p
         {
@@ -170,13 +213,9 @@ body, html
         flex-direction: column;
         justify-content: space-evenly;
         width: 70%;
-
-        p
-        {
-            text-overflow: ellipsis;
-            overflow: hidden;
-            word-wrap: break-word;
-        }
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
     }
 
     .prix 
@@ -187,25 +226,34 @@ body, html
 
     .break
     {
-        width: -75px;
+        width: 75px;
+        margin-right: -75px;
         height: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: #99E2D0;
+        background-color: $mintgreen;
         border-bottom-right-radius: 20px;
         border-top-right-radius: 20px;
-        overflow: hidden;
-
-        :hover
-        {
-            width: 100px;
-        }
 
         i
         {
             font-size: 25px;
             color: white;
+            animation: spin infinite 1.5s;
+            animation-delay: 1s;
+        }
+    }
+
+    @keyframes spin
+    {
+        0%
+        {
+            transform: rotate(0deg);
+        }
+        100%
+        {
+            transform: rotate(360deg);
         }
     }
 
@@ -221,16 +269,15 @@ body, html
         width: 40%;
         margin-left: auto;
         margin-right: auto;
-        border: 1px #f2f2f2 solid;
         border-radius: 30px;
-        background: linear-gradient(70deg, #FF79DA, #9356DC);
+        background: linear-gradient(70deg, $secondarycolor, $primarycolor);
         color: white;
         cursor: pointer;
         position: relative;
         overflow: hidden;
         z-index: 0;
 
-        ::before
+        &::before
         {
             content: "";
             position: absolute;
@@ -238,17 +285,18 @@ body, html
             left: 0%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(70deg, #ffa8e6, #ad80e5);
+            background: linear-gradient(70deg, $lightsecondarycolor, $lightprimarycolor);
             transition: all .5s;
             border-radius: 30% 30% 0 0;
             z-index: -1;
         }
 
-        :hover
+        &:hover
         {
             box-shadow: 5px 3px 10px rgb(124, 124, 124);
+            transition: box-shadow .5s ease-in-out;
 
-            ::before
+            &::before
             {
                 top: 0;
                 border-radius: 0;
@@ -330,7 +378,7 @@ body, html
     
         section
         {
-            background-color: #f2f2f2;
+            background-color: $lightgrey;
             margin-top: -80px;
             z-index: 1;
             position: relative;
@@ -356,8 +404,8 @@ body, html
             text-align: center;
             width: 100%;
             height: 100px;
-            border-bottom: 2px #D9D9D9 solid;
-            box-shadow: 0px 5px 5px #D9D9D9;
+            border-bottom: 2px $grey solid;
+            box-shadow: 0px 5px 5px $grey;
             position: relative;
             z-index: 1;
 
@@ -409,10 +457,10 @@ body, html
             margin-left: 28px;
             text-transform: uppercase;
 
-            ::after
+            &::after
             {
                 content: "";
-                border: 3px #99E2D0 solid;
+                border: 3px $mintgreen solid;
                 width: 30px;                
             }
         }
@@ -435,7 +483,7 @@ body, html
             margin-left: auto;
             margin-right: auto;
             margin-bottom: 20px;
-            box-shadow: 10px 10px 10px #f2f2f2;
+            box-shadow: 10px 10px 10px $lightgrey;
 
             p
             {
@@ -471,14 +519,14 @@ body, html
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #99E2D0;
+            background-color: $mintgreen;
             border-bottom-right-radius: 20px;
             border-top-right-radius: 20px;
             overflow: hidden;
 
-            :hover
+            &:hover
             {
-                width: 100px;
+                width: 75px;
             }
 
             i
@@ -500,16 +548,15 @@ body, html
             width: 40%;
             margin-left: auto;
             margin-right: auto;
-            border: 1px #f2f2f2 solid;
             border-radius: 30px;
-            background: linear-gradient(70deg, #FF79DA, #9356DC);
+            background: linear-gradient(70deg, $secondarycolor, $primarycolor);
             color: white;
             cursor: pointer;
             position: relative;
             overflow: hidden;
             z-index: 0;
 
-            ::before
+            &::before
             {
                 content: "";
                 position: absolute;
@@ -517,17 +564,17 @@ body, html
                 left: 0%;
                 width: 100%;
                 height: 100%;
-                background: linear-gradient(70deg, #ffa8e6, #ad80e5);
+                background: linear-gradient(70deg, $lightsecondarycolor, $lightprimarycolor);
                 transition: all .5s;
                 border-radius: 30% 30% 0 0;
                 z-index: -1;
             }
 
-            :hover
+            &:hover
             {
                 box-shadow: 5px 3px 10px rgb(124, 124, 124);
 
-                ::before
+                &::before
                 {
                     top: 0;
                     border-radius: 0;
