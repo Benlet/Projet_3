@@ -514,7 +514,8 @@ body, html
     
         .break
         {
-            width: -75px;
+            width: 75px;
+            margin-right: -75px;
             height: 100%;
             display: flex;
             align-items: center;
